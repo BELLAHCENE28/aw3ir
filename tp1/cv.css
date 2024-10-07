@@ -1,0 +1,171 @@
+/* Styles généraux */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+nav {
+    text-align: right;
+    background-color: #e57373; /* Couleur rosée */
+    padding: 10px 20px;
+}
+
+    
+.click-link a {
+    color: white;
+    text-decoration: none;
+}
+
+.click-link {
+    color: white;
+    text-decoration: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    text-decoration: none;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #b04c4c; /* Couleur rosée foncée */
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 1.8em;
+    margin-top: 10px;
+}
+
+/* Table générale */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #e57373; /* Couleur rosée */
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+th a {
+    color: white;
+    text-decoration: none;
+}
+
+th a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+td {
+    font-size: 1em;
+    color: #333;
+}
+
+table a {
+    color: #f0f0f0; /* Couleur rosée */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table a {
+    color: #b04c4c; /* Couleur rosée foncée */
+    text-decoration: none;
+}
+
+/* Images des logos */
+.company-logo {
+    width: 25px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Sections de compétences */
+table tr td:first-child {
+    font-weight: bold;
+    color: #b04c4c; /* Couleur rosée foncée */
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #777;
+    background-color: #f5f5f5;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer p a {
+    color: #f5a5a5; /* Couleur rosée plus claire */
+    text-decoration: none;
+}
+
+footer p a {
+    color: #f5a5a5;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1.5em;
+    }
+
+    /* Style pour les liens des titres */
+    .title-link {
+        text-decoration: none;
+        color: #fff; /* Couleur blanche */
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .title-link {
+        text-decoration: none;
+        color: #f0f0f0;
+    }
+
+    
+}
