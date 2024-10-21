@@ -9,49 +9,124 @@
 </head>
 
 <body>
-    <h4> TP3 </h4>
+    <h5 style="text-align: center;"> TP AW #4 : Ajout de fonctionnalités HTML5 au formulaire
+    </h5>
     <div class="container mt-5">
         <form id="myForm">
             <div class="mb-3">
-                <label for="nom" class="form-label">Nom</label> <small> (5 caractères minimum)</small>
-                <input type="text" class="form-control" id="nom" required>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="nom" class="form-label">Nom</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="nom" placeholder="nom" required
+                            onkeyup="calcNbChar(this.id)">
+                    </div>
+                    <div class="col-1">
+                        <span class="badge bg-light text-dark" id="charCountnom"> 0 car</span>
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="prenom" class="form-label">Prénom</label> <small> (5 caractères minimum)</small>
-                <input type="text" class="form-control" id="prenom" required>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="prenom" class="form-label">Prénom</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class="form-control" id="prenom" placeholder="prenom" required
+                            onkeyup="calcNbChar(this.id)">
+                    </div>
+                    <div class="col-1">
+                        <span class="badge bg-light text-dark" id="charCountprenom"> 0 car</span>
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="dateNaissance" class="form-label">Date de naissance</label> <small>(ne peut pas être dans le
-                    futur)</small>
-                <input type="date" class="form-control" id="dateNaissance" required>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="dateNaissance" class="form-label">Date de naissance</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="date" class="form-control" id="dateNaissance" required>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
-                <label for="adressePostale" class="form-label">Adresse postale</label><small>(5 caractères
-                    minimum)</small>
-                <input type="text" class="form-control" id="adressePostale" required>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="adressePostale" class="form-label">Adresse</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" class="form-control" id="adressePostale" placeholder="adresse postale"
+                            required onkeyup="calcNbChar(this.id)">
+                    </div>
+                    <div class="col-1">
+                        <span class="badge bg-light text-dark" id="charCountadressePostale">0 car</span>
+                    </div>
+                    <DIV class="col-2">
+                        <button type="button" class="btn mapbtn" style="background-color: orange; color: rgb(8, 8, 8);">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                                class="bi bi-geo-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411" />
+                            </svg>
+                            GPS
+                        </button>
+                    </DIV>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div id="map" class="text-center"></div>
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Adresse mail</label> <small>(doit être au format valide)</small>
-                <input type="email" class="form-control" id="email" required>
+                <div class="row">
+                    <div class="col-2">
+                        <label for="email" class="form-label">Adresse mail</label>
+                    </div>
+                    <div class="col-9">
+                        <input type="email" class="form-control" id="email" placeholder="nom" required
+                            onkeyup="calcNbChar(this.id)">
+                    </div>
+                    <div class="col-1">
+                        <span class="badge bg-light text-dark" id="charCountemail"> 0 car</span>
+
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Soumettre</button>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
     </div>
-    <h4 class="mt-5">Liste des Contacts</h4>
-    <table class="table table-bordered" id="contactsTable">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Date de Naissance</th>
-                <th>Adresse</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Les contacts ajoutés apparaîtront ici -->
-        </tbody>
-    </table>
+    <div class="container mt-5">
+        <div class="mb-3 row">
+            <div class="col-7">
+                <h4>Liste des Contacts</h4>
+            </div>
+            <div class="col-5">
+                <button class="btn btn-primary reset">Reset</button>
+            </div>
+        </div>
+
+        <table class="table table-bordered" id="contactsTable">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de Naissance</th>
+                    <th>Adresse</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les contacts ajoutés apparaîtront ici -->
+            </tbody>
+        </table>
+    </div>
+    </div>
+
     </div>
 
     <!-- Modal d'erreur -->
@@ -118,6 +193,9 @@
 
 <script src="js/bootstrap.bundle.js"></script>
 <script src="js/form-validation.js"></script>
+<script src="js/gps.js"></script>
+<script src="js/store.js"></script>
+
 </body>
 
 </html>
