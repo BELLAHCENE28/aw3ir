@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'meteo-angular';
+  title = "⛅ Weather webapp @Master 3ir²";
 }
